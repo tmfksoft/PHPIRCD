@@ -189,7 +189,9 @@ class channel {
 		$chan['userlist'] = array();
 		$chan['bans'] = array();
 		$channels[] = $chan;
-		return count($channels)-1; // New ID.
+		end($channels);         // move the internal pointer to the end of the array
+		$id = key($channels);
+		return $id; // New ID.
 	}
 	function get($id,$item) {
 		global $channels;
@@ -214,7 +216,32 @@ class channel {
 			echo " ### {$users[$uid]['nick']}({$uid}) has joined {$channels[$id]['name']} ### \n";
 		}
 		else {
-			echo "ERROR";
+			echo "ERROR Channel {$id} DOES NOT EXIST.\n";
+		}
+	}
+	function del_user($id,$uid) {
+		global $channels;
+		// Remove a user from a channel
+		if ($this->exists($id)) {
+			// Channel exists.
+			$userlist = $this->get($id,"userlist");
+			foreach ($userlist as $ulistid => $usr) {
+				if ($usr['id'] == $uid) {
+					// Found you.
+					echo "{$uid} HAS ULIST ID {$ulistid} IN {$id}\n";
+					echo count($userlist)." Is the userlist count in {$id}\n";
+					if (count($userlist) == 1) {
+						// Last user in the channel
+						echo "Reseting {$id}'s userlist\n";
+						$channels[$id]['userlist'] = array(); // Clean array.
+						var_dump($channels);
+					}
+					else {
+						unset($channels[$id]['userlist'][$ulistid]);
+						array_values($channels[$id]['userlist']);
+					}
+				}
+			}
 		}
 	}
 	function getID($name) {
@@ -267,8 +294,8 @@ while(true)
 			$clients[] = $newc;
 		}
 		foreach ($clients as $id => $sock) {
-			$input = socket_read($sock,1024);
-			if ($input == null) {
+			$input = @socket_read($sock,1024);
+			if ($input == false) {
 				//echo "{$sock} is closed.\n\r";
 				//unset($clients[$id]);
 			}
@@ -383,7 +410,7 @@ function handle_data($string,$sock,$user) {
 			
 			// UserList
 			$names = array();
-			var_dump($channels[$chan_id]['userlist']);
+			var_dump($channels);
 			
 			foreach ($channels[$chan_id]['userlist'] as $lid => $ulist) {
 				$list_id = $ulist['id'];
@@ -419,7 +446,10 @@ function handle_data($string,$sock,$user) {
 					$victim = $ulist['id'];
 					$vic_sock = $users[$victim]['socket'];
 					$str = ":{$hostmask} JOIN :".$thechan."\n\r";
-					socket_write($vic_sock,$str,strlen($str));
+					if ($u->get($victim,"connected") == true) {
+						// Avoid issues. -.-
+						socket_write($vic_sock,$str,strlen($str));
+					}
 				}
 			}
 		}
@@ -502,8 +532,68 @@ function handle_data($string,$sock,$user) {
 		}
 	}
 	else if ($ex[0] == "QUIT") {
+		echo "{$user} HAS QUIT THE NETWORK!\n";
+		$message = "Quit: ".$u->getNick($user);
+		if (isset($ex[2]) && $ex[2] != ":") {
+			// Theres a custom quit message.
+			$message = substr(implode(chr(32),array_slice($ex,1)),1);
+		}
 		// User disconnected.
 		$users[$user]['connected'] = FALSE;
+		// cycle all channels, if the users in tell all users in that channel they've gone.
+		$to_tell = array();
+		foreach($channels as $cid => $chan) {
+			$in_chan = $chan['userlist'];
+			$isin = false;
+			foreach ($in_chan as $ulid) {
+				if ($ulid['id'] == $user) {
+					$isin = true;
+				}
+			}
+			if ($isin) {
+				echo "{$user} IS IN CHANNEL {$cid} AKA {$c->get($cid,"name")}\n";
+				$c->del_user($cid,$user);
+				$in_chan = $channels[$cid]['userlist']; // Reset it.
+				// The users in this channel.
+				foreach ($in_chan as $auser) {
+					$u_id = $auser['id']; // User of target.
+					if ($u_id !== $user) {
+						// Its not me.
+						if (!in_array($u_id,$to_tell)) {
+							$to_tell[] = $u_id;
+						}
+					}
+				}
+				echo count($in_chan)." users are left in {$cid} aka {$c->get($cid,"name")}!\n";
+				var_dump($channels);
+				var_dump($in_chan);
+				if (count($in_chan) == "0") {
+					// Empty chan. DESTROY.
+					echo "Destroying channel {$cid} as there is no one left in it.\n";
+					unset($channels[$cid]);
+				}
+			}
+			else {
+				echo "{$user} IS NOT IN {$cid} AKA {$c->get($cid,"name")}\n";
+			}
+		}
+		if (count($to_tell) > 0) {
+			foreach ($to_tell as $target) {
+				echo "TELLING {$target} ABOUT THIS NEWS!\n";
+				$usock = $u->get($target,"socket");
+				if ($u->hasmode($user,"x")) {
+					$hostmask = $u->getNick($user)."!".$u->get($user,"username")."@".$u->get($user,"cloaked");
+				}
+				else {
+					$hostmask = $u->getNick($user)."!".$u->get($user,"username")."@".$u->get($user,"uncloaked");
+				}
+				$str = ":{$hostmask} QUIT :{$message}\n\r";
+				socket_write($usock,$str,strlen($str));
+			}
+		}
+		// We need to remove their socket
+		global $clients;
+		unset($clients[$user-1]);
 		@socket_close($sock);
 	}
 	else if ($ex[0] == "PRIVMSG" || $ex[0] == "NOTICE") {
@@ -549,7 +639,7 @@ function handle_data($string,$sock,$user) {
 		}
 	}
 	else {
-		$return[] = $ex[0]." :{$ex[0]} Unknown Command";
+		$return[] = ":{{$config['netaddr']} 421 {$u->getNick($user)} {$ex[0]} :Unknown Command";
 	}
 	return $return;
 }
@@ -575,11 +665,70 @@ function mode_to_sym($modes) {
 	}
 	return $ret;
 }
+function user_quit($user,$message = false) {
+	global $u,$c,$channels,$users,$clients;
+	
+	echo "{$user} HAS QUIT THE NETWORK!\n";
+
+	if (!$message) {
+		// Theres a custom quit message.
+		$message = "Quit: ".$u->getNick($user);
+	}
+
+	// User disconnected.
+	$users[$user]['connected'] = FALSE;
+	// cycle all channels, if the users in tell all users in that channel they've gone.
+	$to_tell = array();
+	foreach($channels as $cid => $chan) {
+		$in_chan = $chan['userlist'];
+		$isin = false;
+		foreach ($in_chan as $ulid) {
+			if ($ulid['id'] == $user) {
+				$isin = true;
+			}
+		}
+		if ($isin) {
+			echo "{$user} IS IN CHANNEL {$cid} AKA {$c->get($cid,"name")}\n";
+			$c->del_user($cid,$user);
+			// The users in this channel.
+			foreach ($in_chan as $auser) {
+				$u_id = $auser['id']; // User of target.
+				if ($u_id !== $user) {
+					// Its not me.
+					if (!in_array($u_id,$to_tell)) {
+						$to_tell[] = $u_id;
+					}
+				}
+			}
+		}
+		else {
+			echo "{$user} IS NOT IN {$cid} AKA {$c->get($cid,"name")}\n";
+		}
+	}
+	if (count($to_tell) > 0) {
+		foreach ($to_tell as $target) {
+			echo "TELLING {$target} ABOUT THIS NEWS!\n";
+			$sock = $u->get($target,"socket");
+			if ($u->hasmode($user,"x")) {
+				$hostmask = $u->getNick($user)."!".$u->get($user,"username")."@".$u->get($user,"cloaked");
+			}
+			else {
+				$hostmask = $u->getNick($user)."!".$u->get($user,"username")."@".$u->get($user,"uncloaked");
+			}
+			$str = ":{$hostmask} QUIT :{$message}\n\r";
+			socket_write($sock,$str,strlen($str));
+		}
+	}
+	// We need to remove their socket
+	global $clients;
+	unset($clients[$user-1]);
+	@socket_close($sock);
+}
 function shutdown($fucks = 0) {
 	global $clients,$socket,$config;
 	foreach ($clients as $sock) {
 		echo "CLOSING SOCKET {$sock}\n";
-		@socket_write($sock,":{$config['netaddr']} NOTICE AUTH :Server is closing.\n\r");
+		@socket_write($sock,":{$config['netaddr']} NOTICE :Server is closing.\n\r");
 		@socket_close($sock); // Closes any existing.
 	}
 	echo "CLOSED ".count($clients)." CLIENTS\n";
