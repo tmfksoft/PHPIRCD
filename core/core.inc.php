@@ -28,27 +28,17 @@ class core {
 	}
 	function log($filename,$text,$echo = false) {
 		// Loads a logfile and appends data.
-		if (file_exists("../log/".$filename)) {
-			$log = explode("\n",file_get_contents("../log/".$filename));
+		if (file_exists($filename)) {
+			$log = explode("\n",file_get_contents($filename));
 		} else {
 			$log = array();
 		}
-		$log[] = $text;
+		$ts = date("h:ia");
+		$log[] = "[ ".$ts." ] ".$text;
 		if ($echo) echo $text."\n";
-		file_put_contents("../log/".$filename,implode("\n",$log));
+		file_put_contents($filename,implode("\n",$log));
 		return $text;
 	}
 }
 $core = new core;
-$_CONFIG = array();
-class config {
-	function load_config($fname) {
-		// Loads a config.
-	}
-	function get($section,$item) {
-		global $_CONFIG;
-		// Gets an item from a section
-		// Pass NULL from the section to get the item from the main config.
-	}
-}
 ?>
