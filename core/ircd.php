@@ -11,7 +11,12 @@ pcntl_signal(SIGUSR1, "shutdown");
 register_shutdown_function('shutdown');
 // Set the ip and port we will listen on
 $address = 'let.fudgie.undo.it';
-$port = $argv[1];
+if (isset($argv[1])) {
+	$port = $argv[1];
+}
+else {
+	$port = 7000;
+}
 $max_clients = 10;
 $config = array();
 $config['netname'] = "FudgieIRC";
@@ -20,19 +25,29 @@ $config['srvid'] = "1";
 $config['srvdesc'] = "An IRCD in PHP";
 $config['open'] = true; // Is the server open to connections? Toggle with: /
 $config['cloak'] = "htnruy54byuhbgdsghvdbl4HRGHRTt4";
+$config['motd'] = "data/ircd.cfg";
+
+$ircd = array();
+$ircd['name'] = "FudgieIRCD";
+$ircd['flavour'] = "Vanilla";
+$ircd['version'] = "0.1";
+
+include('functions.php');
+
+$core->log("ircd.log","==========[ {$ircd['name']}({$ircd['flavour']})-{$ircd['version']} ]========",true);
+$core->log("ircd.log","Starting IRCD..",true);
 
 $clients = array();
 $socket = socket_create(AF_INET,SOCK_STREAM,0);
 socket_set_nonblock($socket);
-
 if (!$socket) {
 	die('Error creating socket.');
 }
-@socket_bind($socket,$address,$port) or die("Cannot Bind\n");
-socket_listen($socket) or die("Cannot Listen\n");
-
-
-echo "{$socket} is the master socket on port {$port}\n";
+if (!socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, 1)) {
+    echo 'Unable to set option on socket: '. socket_strerror(socket_last_error()) . PHP_EOL;
+}
+@socket_bind($socket,$address,$port) or die($core->log("ircd.log","FATAL: Cannot Bind to {$address}:{$port} :".socket_strerror(socket_last_error())."\n",true));
+socket_listen($socket) or die($core->log("ircd.log","FATAL: Cannot Listen :".socket_strerror(socket_last_error())."\n",true));
 
 // Supported modes
 $user_modes = "x";
@@ -90,7 +105,6 @@ class user {
 			foreach ($modes as $mode) {
 				if ($mode === "O" || $mode === "A") {
 					$isop = true;
-					echo "They ARE.\n";
 				}
 			}
 			return $isop;
@@ -124,7 +138,6 @@ class user {
 				// Make sure they're connected.
 				if (strtolower($u['nick']) === strtolower($nick)) {
 					$user_id = $id;
-					echo "We found {$nick}!!\n";
 				}
 			}
 		}
@@ -212,7 +225,8 @@ class channel {
 		global $channels,$users;
 		if ($this->exists($id)) {
 			// channel exists.
-			$channels[$id]['userlist'][] = array("id"=>$uid,"modes"=>$modes);
+			$channels[$id]['userlist'][$uid] = $modes;
+			//$channels[$id]['userlist'][] = array("id"=>$uid,"modes"=>$modes);
 			echo " ### {$users[$uid]['nick']}({$uid}) has joined {$channels[$id]['name']} ### \n";
 		}
 		else {
@@ -226,7 +240,7 @@ class channel {
 			// Channel exists.
 			$userlist = $this->get($id,"userlist");
 			foreach ($userlist as $ulistid => $usr) {
-				if ($usr['id'] == $uid) {
+				if ($ulistid == $uid) {
 					// Found you.
 					echo "{$uid} HAS ULIST ID {$ulistid} IN {$id}\n";
 					echo count($userlist)." Is the userlist count in {$id}\n";
@@ -246,6 +260,7 @@ class channel {
 	}
 	function getID($name) {
 		global $channels;
+		// ID of WHAT? The Channel?
 		$chan_id = false;
 		foreach ($channels as $id => $c) {
 			// Make sure they're connected.
@@ -261,6 +276,7 @@ class channel {
 		}
 	}
 	function hasmode($id,$mode) {
+		// What?
 		$modes = str_split($this->get($id,"modes"));
 		$has = false;
 		foreach ($modes as $m) {
@@ -273,10 +289,10 @@ class channel {
 }
 $c = new channel;
 $u = new user;
+$core = new core;
 
-
-
-while(true)
+$running = true;
+while($running)
 {
 	$to_read = array();
 	$to_read[] = $socket;
@@ -349,8 +365,9 @@ function handle_data($string,$sock,$user) {
 		$return[] = ":{$config['netaddr']} 001 {$users[$user]['nick']} :Welcome to the {$config['netname']} IRC Network ".$users[$user]['nick']."!{$ex[1]}@".$users[$user]['cloaked'];
 		echo "USER {$user} is now connected.\n";
 		// Drop them a MOTD.
-		$motd = explode("\n",file_get_contents("motd.txt"));
+		$motd = explode("\n",file_get_contents($config['motd']));
 		$return[] = ":{$config['netaddr']} 375 {$users[$user]['nick']} :- {$config['netaddr']} Message of the Day -";
+		$return[] = ":{$config['netaddr']} 372 {$users[$user]['nick']} :- ".date('d/n/Y')." ".date('G:i');
 		foreach ($motd as $line) {
 			$return[] = ":{$config['netaddr']} 372 {$users[$user]['nick']} :- ".$line;
 		}
@@ -362,7 +379,7 @@ function handle_data($string,$sock,$user) {
 	}
 	else if ($ex[0] == "MOTD") {
 	// Drop them a MOTD.
-		$motd = explode("\n",file_get_contents("motd.txt"));
+		$motd = explode("\n",file_get_contents($config['motd']));
 		$return[] = ":{$config['netaddr']} 375 {$users[$user]['nick']} :- {$config['netaddr']} Message of the Day -";
 		foreach ($motd as $line) {
 			$return[] = ":{$config['netaddr']} 372 {$users[$user]['nick']} :- ".$line;
@@ -400,7 +417,7 @@ function handle_data($string,$sock,$user) {
 				$c->add_user($chan_id,$user,"o");
 			}
 			
-			// Stuff the end user sees regarless.
+			// Stuff the end user sees regardless.
 			$return[] = ":{$hostmask} JOIN :".$thechan;
 			// Topic
 			if (!$made) {	
@@ -460,6 +477,15 @@ function handle_data($string,$sock,$user) {
 			$subject = $ex[1];
 			if ($subject[0] == "#") {
 				// Channel. We'll deal with this another time
+				if ($ex[2] == "+b" && !isset($ex[3])) {
+					// Requested topic and Ban List.
+					// Cycle the channel banlist.
+					$return[] = ":{$config['netaddr']} 367 {$users[$user]['nick']} {$subject} *!*@247-90B3CF2D.irccloud.com setter ".time();
+					$return[] = ":{$config['netaddr']} 368 {$users[$user]['nick']} {$subject} :End of Channel Ban List";
+				}
+				else {
+					// Changing a channel mode.
+				}
 			}
 			else {
 				// User.
@@ -725,15 +751,26 @@ function user_quit($user,$message = false) {
 	@socket_close($sock);
 }
 function shutdown($fucks = 0) {
-	global $clients,$socket,$config;
-	foreach ($clients as $sock) {
-		echo "CLOSING SOCKET {$sock}\n";
-		@socket_write($sock,":{$config['netaddr']} NOTICE :Server is closing.\n\r");
-		@socket_close($sock); // Closes any existing.
+	global $clients,$socket,$config,$core;
+	if (isset($clients)) {
+		foreach ($clients as $sock) {
+			@socket_write($sock,":{$config['netaddr']} NOTICE :Server is closing.\n\r");
+			@socket_close($sock); // Closes any existing.
+		}
 	}
-	echo "CLOSED ".count($clients)." CLIENTS\n";
-	echo "CLOSING MASTER\n";
-	@socket_close($socket);
+	if (isset($socket)) {
+		// Poll it for left over data.
+		$input = @socket_read($socket,1024);
+		while ($input) {
+			$input = @socket_read($socket,1024);
+		}
+		if ($socket != FALSE) {
+			usleep(500);
+			@socket_shutdown($socket);
+			@socket_close($socket);
+		}
+	}
+	$core->log("ircd.log","Shutting down..");
 	die();
 }
 ?>

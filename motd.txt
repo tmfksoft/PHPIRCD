@@ -1,2 +1,0 @@
-My IRCD MOTD
-Welcome to the IRCD.
