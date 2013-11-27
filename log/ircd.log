@@ -1,294 +1,194 @@
-[ 1385506366 ] Shutting down!
-[ 1385506397 ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 1385506397 ] Starting IRCD..
-[ 1385506397 ] Loading configuration
-[ 1385506397 ] Configuration file data/ircd.conf does not exist!
-[ 1385506397 ] Error loading configuration!
-[ 1385506397 ] Loading modules
-[ 1385506397 ] Loaded 0 modules
-[ 1385506397 ] Shutting down!
-[ 02:53 30 ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 02:53 30 ] Starting IRCD..
-[ 02:53 30 ] Loading configuration
-[ 02:53 30 ] Configuration file data/ircd.conf does not exist!
-[ 02:53 30 ] Error loading configuration!
-[ 02:53 30 ] Loading modules
-[ 02:53 30 ] Loaded 0 modules
-[ 02:53 30 ] Shutting down!
-[ 02:54am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 02:54am ] Starting IRCD..
-[ 02:54am ] Loading configuration
-[ 02:54am ] Configuration file data/ircd.conf does not exist!
-[ 02:54am ] Error loading configuration!
-[ 02:54am ] Loading modules
-[ 02:54am ] Loaded 0 modules
-[ 02:54am ] Shutting down!
-[ 02:55am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 02:55am ] Starting IRCD..
-[ 02:55am ] Loading configuration
-[ 02:55am ] Error loading configuration!
-[ 02:55am ] Loading modules
-[ 02:55am ] Loaded 0 modules
-[ 02:55am ] Shutting down!
-[ 02:55am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 02:55am ] Starting IRCD..
-[ 02:55am ] Loading configuration
-[ 02:55am ] Error loading configuration!
-[ 02:55am ] Shutting down!
-[ 02:55am ] Shutting down!
-[ 02:56am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 02:56am ] Starting IRCD..
-[ 02:56am ] Loading configuration
-[ 02:56am ] Error loading configuration!
-[ 02:56am ] Shutting down!
-[ 02:56am ] Shutting down!
-[ 03:13am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:13am ] Starting IRCD..
-[ 03:13am ] Loading configuration
-[ 03:13am ] Loading modules
-[ 03:13am ] Loaded 0 modules
-[ 03:13am ] Shutting down!
-[ 03:13am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:13am ] Starting IRCD..
-[ 03:13am ] Loading configuration
-[ 03:13am ] Encountered 21 errors when parsing data/ircd.conf
-[ 03:13am ] Config Error: Error on line 0 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 1 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 2 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 3 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 4 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 5 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 6 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 7 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 8 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 9 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 10 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 11 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 12 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 13 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 14 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 15 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 16 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 18 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 19 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 20 in data/ircd.conf: Expecting end line character ';'!
-[ 03:13am ] Config Error: Error on line 21 in data/ircd.conf: Unexpected end of block!
-[ 03:13am ] Error loading configuration!
-[ 03:13am ] Shutting down!
-[ 03:13am ] Shutting down!
-[ 03:14am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:14am ] Starting IRCD..
-[ 03:14am ] Loading configuration
-[ 03:14am ] Encountered 21 errors when parsing data/ircd.conf
-[ 03:14am ] Config Error: Error on line 0 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 1 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 2 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 3 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 4 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 5 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 6 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 7 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 8 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 9 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 10 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 11 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 12 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 13 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 14 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 15 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 16 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 18 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 19 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 20 in data/ircd.conf: Expecting end line character ';'!
-[ 03:14am ] Config Error: Error on line 21 in data/ircd.conf: Unexpected end of block!
-[ 03:14am ] Error loading configuration!
-[ 03:14am ] Shutting down!
-[ 03:14am ] Shutting down!
-[ 03:17am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:17am ] Starting IRCD..
-[ 03:17am ] Loading configuration
-[ 03:17am ] Encountered 21 errors when parsing data/ircd.conf
-[ 03:17am ] Config Error: Error on line 0 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 1 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 2 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 3 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 4 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 5 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 6 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 7 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 8 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 9 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 10 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 11 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 12 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 13 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 14 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 15 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 16 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 18 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 19 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 20 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 21 in data/ircd.conf: Unexpected end of block!
-[ 03:17am ] Error loading configuration!
-[ 03:17am ] Shutting down!
-[ 03:17am ] Shutting down!
-[ 03:17am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:17am ] Starting IRCD..
-[ 03:17am ] Loading configuration
-[ 03:17am ] Encountered 21 errors when parsing data/ircd.conf
-[ 03:17am ] Config Error: Error on line 0 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 1 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 2 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 3 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 4 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 5 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 6 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 7 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 8 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 9 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 10 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 11 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 12 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 13 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 14 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 15 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 16 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 18 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 19 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 20 in data/ircd.conf: Expecting end line character ';'!
-[ 03:17am ] Config Error: Error on line 21 in data/ircd.conf: Unexpected end of block!
-[ 03:17am ] Error loading configuration!
-[ 03:17am ] Shutting down!
-[ 03:17am ] Shutting down!
-[ 03:18am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:18am ] Starting IRCD..
-[ 03:18am ] Loading configuration
-[ 03:18am ] Encountered 21 errors when parsing data/ircd.conf
-[ 03:18am ] Config Error: Error on line 0 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 1 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 2 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 3 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 4 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 5 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 6 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 7 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 8 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 9 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 10 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 11 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 12 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 13 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 14 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 15 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 16 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 18 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 19 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 20 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 21 in data/ircd.conf: Unexpected end of block!
-[ 03:18am ] Error loading configuration!
-[ 03:18am ] Shutting down!
-[ 03:18am ] Shutting down!
-[ 03:18am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:18am ] Starting IRCD..
-[ 03:18am ] Loading configuration
-[ 03:18am ] Encountered 21 errors when parsing data/ircd.conf
-[ 03:18am ] Config Error: Error on line 1 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 2 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 3 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 4 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 5 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 6 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 7 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 8 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 9 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 10 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 11 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 12 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 13 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 14 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 15 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 16 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 17 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 19 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 20 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 21 in data/ircd.conf: Expecting end line character ';'!
-[ 03:18am ] Config Error: Error on line 22 in data/ircd.conf: Unexpected end of block!
-[ 03:18am ] Error loading configuration!
-[ 03:18am ] Shutting down!
-[ 03:18am ] Shutting down!
-[ 03:19am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:19am ] Starting IRCD..
-[ 03:19am ] Loading configuration
-[ 03:19am ] Encountered 21 errors when parsing data/ircd.conf
-[ 03:19am ] Config Error: Error on line 1 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 2 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 3 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 4 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 5 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 6 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 7 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 8 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 9 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 10 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 11 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 12 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 13 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 14 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 15 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 16 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 17 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 19 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 20 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 21 in data/ircd.conf: Expecting end line character ';'!
-[ 03:19am ] Config Error: Error on line 22 in data/ircd.conf: Unexpected end of block!
-[ 03:19am ] Error loading configuration!
-[ 03:19am ] Shutting down!
-[ 03:19am ] Shutting down!
-[ 03:19am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:19am ] Starting IRCD..
-[ 03:19am ] Loading configuration
-[ 03:19am ] Loading modules
-[ 03:19am ] Loaded 0 modules
-[ 03:19am ] Shutting down!
-[ 03:19am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:19am ] Starting IRCD..
-[ 03:19am ] Loading configuration
-[ 03:19am ] Loading modules
-[ 03:19am ] Loaded 0 modules
-[ 03:19am ] Shutting down!
-[ 03:20am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:20am ] Starting IRCD..
-[ 03:20am ] Loading configuration
-[ 03:20am ] Loading modules
-[ 03:20am ] Loaded 0 modules
-[ 03:20am ] Shutting down!
-[ 03:22am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:22am ] Starting IRCD..
-[ 03:22am ] Loading configuration
-[ 03:22am ] Loading modules
-[ 03:22am ] Loaded 0 modules
-[ 03:22am ] Shutting down!
-[ 03:22am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:22am ] Starting IRCD..
-[ 03:22am ] Loading configuration
-[ 03:22am ] Loading modules
-[ 03:22am ] Loaded 0 modules
-[ 03:22am ] Shutting down!
-[ 03:22am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:22am ] Starting IRCD..
-[ 03:22am ] Loading configuration
-[ 03:22am ] Loading modules
-[ 03:22am ] Loaded 0 modules
-[ 03:22am ] Shutting down!
-[ 03:23am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:23am ] Starting IRCD..
-[ 03:23am ] Loading configuration
-[ 03:23am ] Loading modules
-[ 03:23am ] Loaded 0 modules
-[ 03:23am ] Shutting down!
-[ 03:28am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
-[ 03:28am ] Starting IRCD..
-[ 03:28am ] Loading configuration
-[ 03:28am ] Loading modules
-[ 03:28am ] Loaded 0 modules
-[ 03:28am ] Shutting down!
+[ 07:13am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:13am ] Starting IRCD...
+[ 07:13am ] Loading configuration...
+[ 07:13am ] Loading modules...
+[ 07:13am ] Loaded 0 modules
+[ 07:13am ] Listening on 0.0.0.0:7000
+[ 07:13am ] Opened 1 listener sockets.
+[ 07:13am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:13am ] Shutting down!
+[ 07:16am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:16am ] Starting IRCD...
+[ 07:16am ] Loading configuration...
+[ 07:16am ] Loading modules...
+[ 07:16am ] Loaded 0 modules
+[ 07:16am ] Shutting down!
+[ 07:17am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:17am ] Starting IRCD...
+[ 07:17am ] Loading configuration...
+[ 07:17am ] Loading modules...
+[ 07:17am ] Loaded 0 modules
+[ 07:17am ] Listening on 0.0.0.0:7000
+[ 07:17am ] Opened 1 listener sockets.
+[ 07:17am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:17am ] Shutting down!
+[ 07:20am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:20am ] Starting IRCD...
+[ 07:20am ] Loading configuration...
+[ 07:20am ] Loading modules...
+[ 07:20am ] Loaded 0 modules
+[ 07:20am ] Listening on 0.0.0.0:7000
+[ 07:20am ] Opened 1 listener sockets.
+[ 07:20am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:20am ] Shutting down!
+[ 07:20am ] Shutting down!
+[ 07:21am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:21am ] Starting IRCD...
+[ 07:21am ] Loading configuration...
+[ 07:21am ] Loading modules...
+[ 07:21am ] Loaded 0 modules
+[ 07:21am ] Listening on 0.0.0.0:7000
+[ 07:21am ] Opened 1 listener sockets.
+[ 07:21am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:21am ] Shutting down!
+[ 07:21am ] Shutting down!
+[ 07:23am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:23am ] Starting IRCD...
+[ 07:23am ] Loading configuration...
+[ 07:23am ] Loading modules...
+[ 07:23am ] Loaded 0 modules
+[ 07:23am ] Listening on 0.0.0.0:7000
+[ 07:23am ] Opened 1 listener sockets.
+[ 07:23am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:23am ] Shutting down!
+[ 07:23am ] Shutting down!
+[ 07:23am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:23am ] Starting IRCD...
+[ 07:23am ] Loading configuration...
+[ 07:23am ] Loading modules...
+[ 07:23am ] Loaded 0 modules
+[ 07:23am ] Listening on 0.0.0.0:7000
+[ 07:23am ] Opened 1 listener sockets.
+[ 07:23am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:24am ] Shutting down!
+[ 07:24am ] Shutting down!
+[ 07:26am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:26am ] Starting IRCD...
+[ 07:26am ] Loading configuration...
+[ 07:26am ] Loading modules...
+[ 07:26am ] Loaded 0 modules
+[ 07:26am ] Listening on 0.0.0.0:7000
+[ 07:26am ] Opened 1 listener sockets.
+[ 07:26am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:27am ] Shutting down!
+[ 07:27am ] Shutting down!
+[ 07:27am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:27am ] Starting IRCD...
+[ 07:27am ] Loading configuration...
+[ 07:27am ] Loading modules...
+[ 07:27am ] Loaded 0 modules
+[ 07:27am ] Listening on 0.0.0.0:7000
+[ 07:27am ] Opened 1 listener sockets.
+[ 07:27am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:28am ] Shutting down!
+[ 07:28am ] Shutting down!
+[ 07:28am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:28am ] Starting IRCD...
+[ 07:28am ] Loading configuration...
+[ 07:28am ] Loading modules...
+[ 07:28am ] Loaded 0 modules
+[ 07:28am ] Listening on 0.0.0.0:7000
+[ 07:28am ] Opened 1 listener sockets.
+[ 07:28am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:28am ] Shutting down!
+[ 07:28am ] Shutting down!
+[ 07:28am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:28am ] Starting IRCD...
+[ 07:28am ] Loading configuration...
+[ 07:28am ] Loading modules...
+[ 07:28am ] Loaded 0 modules
+[ 07:28am ] Listening on 0.0.0.0:7000
+[ 07:28am ] Opened 1 listener sockets.
+[ 07:28am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:29am ] Shutting down!
+[ 07:29am ] Shutting down!
+[ 07:29am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:29am ] Starting IRCD...
+[ 07:29am ] Loading configuration...
+[ 07:29am ] Loading modules...
+[ 07:29am ] Loaded 0 modules
+[ 07:29am ] FATAL: Cannot Bind to 0.0.0.0:7000 :Address already in use
+
+[ 07:29am ] Shutting down!
+[ 07:30am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:30am ] Starting IRCD...
+[ 07:30am ] Loading configuration...
+[ 07:30am ] Loading modules...
+[ 07:30am ] Loaded 0 modules
+[ 07:30am ] FATAL: Cannot Bind to 0.0.0.0:7000 :Address already in use
+
+[ 07:30am ] Shutting down!
+[ 07:31am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:31am ] Starting IRCD...
+[ 07:31am ] Loading configuration...
+[ 07:31am ] Loading modules...
+[ 07:31am ] Loaded 0 modules
+[ 07:31am ] FATAL: Cannot Bind to 0.0.0.0:7000 :Address already in use
+
+[ 07:31am ] Shutting down!
+[ 07:31am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:31am ] Starting IRCD...
+[ 07:31am ] Loading configuration...
+[ 07:31am ] Loading modules...
+[ 07:31am ] Loaded 0 modules
+[ 07:31am ] FATAL: Cannot Bind to 0.0.0.0:7001 :Address already in use
+
+[ 07:31am ] Shutting down!
+[ 07:32am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:32am ] Starting IRCD...
+[ 07:32am ] Loading configuration...
+[ 07:32am ] Loading modules...
+[ 07:32am ] Loaded 0 modules
+[ 07:32am ] Listening on 0.0.0.0:6660
+[ 07:32am ] Opened 1 listener sockets.
+[ 07:32am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:35am ] Shutting down!
+[ 07:35am ] Shutting down!
+[ 07:35am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:35am ] Starting IRCD...
+[ 07:35am ] Loading configuration...
+[ 07:35am ] Loading modules...
+[ 07:35am ] Loaded 0 modules
+[ 07:35am ] FATAL: Cannot Bind to 0.0.0.0:6660 :Address already in use
+
+[ 07:35am ] Shutting down!
+[ 07:36am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:36am ] Starting IRCD...
+[ 07:36am ] Loading configuration...
+[ 07:36am ] Loading modules...
+[ 07:36am ] Loaded 0 modules
+[ 07:36am ] Listening on 0.0.0.0:7000
+[ 07:36am ] Opened 1 listener sockets.
+[ 07:36am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:36am ] Shutting down!
+[ 07:36am ] Shutting down!
+[ 07:38am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:38am ] Starting IRCD...
+[ 07:38am ] Loading configuration...
+[ 07:38am ] Loading modules...
+[ 07:38am ] Loaded 0 modules
+[ 07:38am ] Listening on 0.0.0.0:7000
+[ 07:38am ] Opened 1 listener sockets.
+[ 07:38am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:38am ] Shutting down!
+[ 07:38am ] Shutting down!
+[ 07:40am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:40am ] Starting IRCD...
+[ 07:40am ] Loading configuration...
+[ 07:40am ] Loading modules...
+[ 07:40am ] Loaded 0 modules
+[ 07:40am ] Listening on 0.0.0.0:7000
+[ 07:40am ] Opened 1 listener sockets.
+[ 07:40am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:40am ] Shutting down!
+[ 07:40am ] Shutting down!
+[ 07:40am ] ==========[ FudgieIRCD(Vanilla)-0.1 ]========
+[ 07:40am ] Starting IRCD...
+[ 07:40am ] Loading configuration...
+[ 07:40am ] Loading modules...
+[ 07:40am ] Loaded 0 modules
+[ 07:40am ] Listening on 0.0.0.0:7000
+[ 07:40am ] Opened 1 listener sockets.
+[ 07:40am ] FudgieIRCD(Vanilla)-0.1 has booted successfully!
+[ 07:40am ] Shutting down!
+[ 07:40am ] Shutting down!

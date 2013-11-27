@@ -8,6 +8,7 @@ function gen_str($length = 5) {
 	return $chars;
 }
 global $VAR;
+$VAR['ERROR'] = array();
 class core {
 	function sendMOTD($socket) {
 		global $config;
@@ -16,14 +17,6 @@ class core {
 		$return[] = ":{$config['netaddr']} 372 {$users[$user]['nick']} :- ".date('d/n/Y')." ".date('G:i');
 		foreach ($motd as $line) {
 			$return[] = ":{$config['netaddr']} 372 {$users[$user]['nick']} :- ".$line;
-		}
-	}
-	function buffer($text = false) {
-		global $VAR;
-		if ($text) {
-			$VAR['buffer'][] = $text;
-		} else {
-			return $VAR['BUFFER'];
 		}
 	}
 	function log($filename,$text,$echo = false) {
@@ -38,6 +31,29 @@ class core {
 		if ($echo) echo $text."\n";
 		file_put_contents($filename,implode("\n",$log));
 		return $text;
+	}
+	function error($string = false,$type = "WARNING") {
+		global $VAR;
+		if (!$string) {
+			return $VAR['ERROR'];
+		} else {
+			$VAR['ERROR'][] = array("type"=>$type,"msg"=>$string);
+			$this->log("log/ircd.log","[{$type}] {$string}",true);
+			return true;
+		}
+	}
+	function handle_errors() {
+		global $VAR;
+		$fc = 0;
+		foreach ($VAR['ERROR'] as $ERR) {
+			if ($ERR['type'] == "FATAL") {
+				$fc++;
+			}
+		}
+		if ($fc > 0) {
+			$this->log("log/ircd.log","Encountered {$fc} FATAL Errors. Aborting.",true);
+			shutdown();
+		}
 	}
 }
 $core = new core;

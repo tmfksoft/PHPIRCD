@@ -20,7 +20,7 @@ class config {
 		// Config parsing system by Thomas Edwards
 		$cfg = explode("\n",file_get_contents($filename));
 		foreach ($cfg as $line => $ln) {
-			if ($ln != "") {
+			if (trim($ln) != "") {
 				$ln = trim($ln);
 				$line++;
 				$end_char = $ln[strlen($ln)-1];
