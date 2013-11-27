@@ -1,0 +1,5 @@
+Installing the IRCD
+------
+Installing is super simple, Aquire the files via git pull or the "Download ZIP"
+ensure that 'ircd' in the root directory has mode x you can ensure it has by running
+"chmod +x ircd", after doing this CD into data and edit ircd.conf to suit.
